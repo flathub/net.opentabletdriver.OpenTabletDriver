@@ -1,0 +1,45 @@
+{
+  "Name": "UGTABLET M708",
+  "Specifications": {
+    "Digitizer": {
+      "Width": 200.0,
+      "Height": 120.0,
+      "MaxX": 40000.0,
+      "MaxY": 24000.0
+    },
+    "Pen": {
+      "MaxPressure": 2047,
+      "Buttons": {
+        "ButtonCount": 2
+      }
+    },
+    "AuxiliaryButtons": {
+      "ButtonCount": 8
+    },
+    "MouseButtons": null,
+    "Touch": null
+  },
+  "DigitizerIdentifiers": [
+    {
+      "VendorID": 21827,
+      "ProductID": 129,
+      "InputReportLength": 8,
+      "OutputReportLength": null,
+      "ReportParser": "OpenTabletDriver.Configurations.Parsers.XP_Pen.XP_PenOffsetAuxReportParser",
+      "FeatureInitReport": null,
+      "OutputInitReport": null,
+      "DeviceStrings": {
+        "5": "UC-LOIC",
+        "6": "TABLET 1060"
+      },
+      "InitializationStrings": [
+        100,
+        123
+      ]
+    }
+  ],
+  "AuxilaryDeviceIdentifiers": [],
+  "Attributes": {
+    "libinputoverride": "1"
+  }
+}

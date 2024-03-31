@@ -1,0 +1,58 @@
+{
+  "Name": "Wacom PTZ-630",
+  "Specifications": {
+    "Digitizer": {
+      "Width": 203.2,
+      "Height": 152.4,
+      "MaxX": 40640.0,
+      "MaxY": 30480.0
+    },
+    "Pen": {
+      "MaxPressure": 2046,
+      "Buttons": {
+        "ButtonCount": 2
+      }
+    },
+    "AuxiliaryButtons": {
+      "ButtonCount": 8
+    },
+    "MouseButtons": {
+      "ButtonCount": 5
+    },
+    "Touch": null
+  },
+  "DigitizerIdentifiers": [
+    {
+      "VendorID": 1386,
+      "ProductID": 177,
+      "InputReportLength": 10,
+      "OutputReportLength": null,
+      "ReportParser": "OpenTabletDriver.Configurations.Parsers.Wacom.Intuos3.Intuos3ReportParser",
+      "FeatureInitReport": [
+        "AgI=",
+        "BAA="
+      ],
+      "OutputInitReport": null,
+      "DeviceStrings": {},
+      "InitializationStrings": []
+    },
+    {
+      "VendorID": 1386,
+      "ProductID": 177,
+      "InputReportLength": 11,
+      "OutputReportLength": null,
+      "ReportParser": "OpenTabletDriver.Configurations.Parsers.Wacom.Intuos3.WacomDriverIntuos3ReportParser",
+      "FeatureInitReport": [
+        "AgI=",
+        "BAA="
+      ],
+      "OutputInitReport": null,
+      "DeviceStrings": {},
+      "InitializationStrings": []
+    }
+  ],
+  "AuxilaryDeviceIdentifiers": [],
+  "Attributes": {
+    "FeatureInitDelayMs": "150"
+  }
+}
