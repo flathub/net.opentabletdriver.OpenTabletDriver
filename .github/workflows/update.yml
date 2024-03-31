@@ -37,9 +37,10 @@ jobs:
           TAG=$(curl -s https://api.github.com/repos/OpenTabletDriver/OpenTabletDriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
           URL="https://github.com/OpenTabletDriver/OpenTabletDriver/archive/refs/tags/${TAG}.tar.gz"
           curl -L $URL -o OpenTabletDriver-${TAG}.tar.gz
-          tar -xzf OpenTabletDriver-${TAG}.tar.gz
-          mv OpenTabletDriver-${TAG}/* .
-          rm -rf OpenTabletDriver-${TAG} OpenTabletDriver-${TAG}.tar.gz
+          mkdir temp
+          tar -xzf OpenTabletDriver-${TAG}.tar.gz -C temp
+          mv temp/* .
+          rm -rf temp OpenTabletDriver-${TAG}.tar.gz
           
       - name: Download flatpak-dotnet-generator.py script
         run: wget https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/dotnet/flatpak-dotnet-generator.py
