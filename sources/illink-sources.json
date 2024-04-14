@@ -1,0 +1,23 @@
+[
+    {
+        "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.net.illink/8.0.100-1.23067.1/microsoft.net.illink.8.0.100-1.23067.1.nupkg",
+        "sha512": "7a89e833f97cdfd03f5230b132b31ca6e9735ba39020b4e08e8cf18e6ae15c6da895873c325ee782553cca7960385d92f3cb76fe957e0b16687765dc8b19b61c",
+        "dest": "nuget-sources",
+        "dest-filename": "microsoft.net.illink.8.0.100-1.23067.1.nupkg"
+    },
+    {
+        "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.net.illink.tasks/9.0.0-preview.3.24172.9/microsoft.net.illink.tasks.9.0.0-preview.3.24172.9.nupkg",
+        "sha512": "d7d11a0d449e596a5ae40d12b998674ebf9af9c86ac239b68e89654f36b4b37566056716bda59fdbff043d7e002c9023f7eca156132e414c683a89134533d16c",
+        "dest": "nuget-sources",
+        "dest-filename": "microsoft.net.illink.tasks.9.0.0-preview.3.24172.9.nupkg"
+    },
+    {
+        "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.net.illink.analyzers/8.0.100-1.23067.1/microsoft.net.illink.analyzers.8.0.100-1.23067.1.nupkg",
+        "sha512": "3c1dca3dd60c74f5b043d55acb6149a89664599d3ff25783aaf86a5b9fb1d44e77698264167d6fbf9c7522bf05060d67c36927ce4a585e008dd6d7783e82592b",
+        "dest": "nuget-sources",
+        "dest-filename": "microsoft.net.illink.analyzers.8.0.100-1.23067.1.nupkg"
+    }
+]
