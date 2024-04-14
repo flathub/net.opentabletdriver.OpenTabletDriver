@@ -8,9 +8,18 @@ OpenTabletDriver is an open-source, cross-platform tablet driver offering high c
 
 ## Installation
 
-To install this Flatpak package, you will need to have Flatpak installed on your system. Most modern Linux distributions either come with Flatpak pre-installed or provide easy methods to set it up. Please refer to the [Flatpak official documentation](https://flatpak.org/setup/) for instructions specific to your distribution.
+### Prerequisites
+Before installing OpenTabletDriver, you need to set up Flatpak on your system. Follow the [pre-installation guide provided](https://github.com/flathub/net.opentabletdriver.OpenTabletDriver/blob/docs/Pre-installation.md).
 
-Once Flatpak is installed, you can install the `net.opentabletdriver.OpenTabletDriver` package using the following command in your terminal:
+### Installation
+
+#### 1. Setup Flatpak
+
+Ensure Flatpak is installed on your system. If it is not already installed, you can install it by following the instructions specific to your operating system on the [Flatpak official website](https://flatpak.org/setup/).
+
+#### 2. Install OpenTabletDriver
+
+With Flatpak and the Flathub repository set up, you can now install OpenTabletDriver. Execute the following command in your terminal:
 
 ```bash
 flatpak install flathub net.opentabletdriver.OpenTabletDriver
