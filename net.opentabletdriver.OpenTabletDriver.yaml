@@ -4,7 +4,7 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: start-otd.sh
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.dotnet6
+  - org.freedesktop.Sdk.Extension.dotnet8
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -47,13 +47,14 @@ modules:
         x86_64:
           env:
             RUNTIME: "linux-x64"
-      append-path: "/usr/lib/sdk/dotnet6/bin"
-      append-ld-library-path: "/usr/lib/sdk/dotnet6/lib"
-      append-pkg-config-path: ":/usr/lib/sdk/dotnet6/lib/pkgconfig"
+      append-path: "/usr/lib/sdk/dotnet8/bin"
+      append-ld-library-path: "/usr/lib/sdk/dotnet8/lib"
+      append-pkg-config-path: ":/usr/lib/sdk/dotnet8/lib/pkgconfig"
+      network: true
     build-commands:
-      - dotnet publish OpenTabletDriver.Console/OpenTabletDriver.Console.csproj -c Release -r $RUNTIME --source nuget-sources -p:PublishSingleFile=true -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
-      - dotnet publish OpenTabletDriver.Daemon/OpenTabletDriver.Daemon.csproj -c Release -r $RUNTIME --source nuget-sources -p:PublishSingleFile=true -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
-      - dotnet publish OpenTabletDriver.UX.Gtk/OpenTabletDriver.UX.Gtk.csproj -c Release -r $RUNTIME --source nuget-sources -p:PublishSingleFile=true -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.Console/OpenTabletDriver.Console.csproj -c Release -r $RUNTIME --source nuget-sources  -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.Daemon/OpenTabletDriver.Daemon.csproj -c Release -r $RUNTIME --source nuget-sources  -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.UX.Gtk/OpenTabletDriver.UX.Gtk.csproj -c Release -r $RUNTIME --source nuget-sources  -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
       - install -Dm644 net.opentabletdriver.OpenTabletDriver.desktop ${FLATPAK_DEST}/share/applications/net.opentabletdriver.OpenTabletDriver.desktop
       - install -Dm644 256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/net.opentabletdriver.OpenTabletDriver.png
       - install -Dm644 net.opentabletdriver.OpenTabletDriver.metainfo.xml ${FLATPAK_DEST}/share/metainfo/net.opentabletdriver.OpenTabletDriver.metainfo.xml
@@ -61,9 +62,10 @@ modules:
     sources:
       - ./sources/linux-x64.json
       - ./sources/linux-arm64.json
+      #- ./sources/illink-sources.json
       - type: git
         url: https://github.com/OpenTabletDriver/OpenTabletDriver
-        tag: v0.6.4.0
+        commit: 461961e
       - type: file
         path: ./net.opentabletdriver.OpenTabletDriver.desktop
       - type: file
@@ -72,3 +74,4 @@ modules:
         path: ./start-otd.sh
       - type: file
         path: ./net.opentabletdriver.OpenTabletDriver.metainfo.xml
+
