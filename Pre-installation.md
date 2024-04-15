@@ -1,3 +1,15 @@
+# Pre-installation instructions
+To get OpenTabletDriver running, certain systemwide changes must be made to allow OTD to use the tablet while also preventing the default kernel drivers from using this tablet.
+
+This does mean that by following these instructions you prevent the systemwide driver from accessing the tablet, if you still need to use these then you should only install the udev rules and manually unload the kernel drivers when you want to use your tablet with OpenTabletDriver.
+
+For scripts that automatically handle everything, see [here](Automatic-install.md), for manual setup, see below.
+
+<!--
+Here we should probably include a mention of upgrading from legacy installations of OTD, or upgrading OTD in general.
+Rule updates may be required for users when they have tablets that have been supported in the following release, but not in a release when they installed the rules.
+-->
+
 # 1. Kernel module setup
 OpenTabletDriver conflicts with two kernel modules: `wacom` and `hid_uclogic`. To ensure proper operation of OpenTabletDriver, we need to blacklist these two kernel modules.
 
