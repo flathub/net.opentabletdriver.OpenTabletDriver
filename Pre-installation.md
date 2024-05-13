@@ -1,88 +1,40 @@
-# 1. Kernel module setup
-OpenTabletDriver conflicts with two kernel modules: `wacom` and `hid_uclogic`. To ensure proper operation of OpenTabletDriver, we need to blacklist these two kernel modules.
+# Pre-installation instructions
 
-To blacklist specific kernel modules such as wacom and hid_uclogic, you need to modify or create some configuration files to instruct the operating system not to load these modules during startup. Below are the specific methods for several major Linux distributions:
+To get OpenTabletDriver running, certain systemwide changes must be made to allow OpenTabletDriver access to the tablet while also preventing the default kernel drivers from using the tablet.
 
-## 1.1  For FHS distro
+This does mean that by following these instructions you prevent the systemwide driver from accessing the tablet, so you must have OpenTabletDriver running to use it.
 
-### 1.1.1 Manually
+If you intend to use OpenTabletDriver for everything, you should install the udev rules and the kernel driver blacklists, if you intend to use the system driver occassionally, alongside OpenTabletDriver, you may not want to install the blacklists, but you'll still need the udev rules.
+
+Installing the blacklists means that OTD will work automatically without the need to run any commands at boot, however any time you would prefer to use the kernel drivers, you would need to load them.
+```bash
+sudo modprobe wacom hid_uclogic
+```
+
+Not installing the blacklists will mean that the system drivers will work automatically, but to use OpenTabletDriver you will need to unload them. Here is a command you can use to unload the kernel drivers.
 ```sh
-sudo vim /etc/modprobe.d/99-opentabletdriver.conf
-```
-Then you should add the following content to it:
-```
-blacklist wacom
-blacklist hid_uclogic
-```
-Save the file and exit the editor.
-
-After this, run:
-
-`sudo modprobe uinput`
-
-Then you need to update the initramfs, which can be done using different methods depending on the distribution. Below are three common commands for updating the initramfs:
-```bash
-sudo update-initramfs -u
-sudo dracut -f
-sudo mkinitcpio -P
-```
-### 1.1.2 Automated method
-
-Just run
-
-`curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-module.sh | sudo bash
-`
-
-
-## 1.2  For non-FHS distroNon-FHS distro
-
-Refer to your distro’s documentation on how to remove udev rules of the name 90-opentabletdriver.rules or 99-opentabletdriver.rules and a kernel module blacklist named blacklist.conf containing:
-```
-blacklist wacom
-blacklist hid_uclogic
-```
-If there is no updated package available for your distro, you may try building from source. Consult your distro’s documentation on how to “install” the resulting generic binary tarball.
-
-# 2. Set up udev rules
-
-In Linux systems, udev is a daemon responsible for managing device nodes. It allows you to run scripts or programs based on device events such as device addition or removal. udev rules can be used to change device permissions, run specific programs or scripts, set environment variables, and more. Therefore, for OpenTabletDriver to function properly, correct udev rules must be set up.
-
-## 2.1 Automated method
-
-Just run
-
-`curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-udev.sh | sudo bash`
-
-## 2.2 Manually
-
-#### 1. Clone the OpenTabletDriver Repository
-
-```bash
-git clone https://github.com/OpenTabletDriver/OpenTabletDriver.git --depth=1
-```
-#### 2. Enter the Repository Directory and Generate New udev Rules
-
-```bash
-cd OpenTabletDriver
-./generate-rules.sh
+sudo rmmod wacom hid_uclogic
 ```
 
-#### 3. Add the Generated udev Rules to the System
-Output the generated udev rules to the `/etc/udev/rules.d/70-opentabletdriver.rules` file:
-```bash
-./generate-rules.sh | sudo tee /etc/udev/rules.d/70-opentabletdriver.rules
-```
-#### 4. Reload udev Rules And Cleanup
-```bash
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-cd ..
-rm -rf OpenTabletDriver
+# Automatic setup
+
+Most distros follow the [FHS standard](https://refspecs.linuxfoundation.org/fhs.shtml), if you don't know if your distro follows this standard, it most likely does.
+
+You cannot use these scripts on distros that do not support the FHS standard, you must refer to their documentation on how to install blacklists for kernel modules and how to install udev rules.
+
+These scripts assume that you have not used a legacy package of OpenTabletDriver before, if you used a version below **0.6.3.0** please follow [these](Legacy-cleanup.md) instructions first.
+
+
+
+```sh
+# Install udev rules, this is required for OTD to function.
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-udev.sh | bash
+# This is optional, but not blacklisting modules means you'll have to `rmmod` every time to use OpenTabletDriver.
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-module.sh | bash 
 ```
 
-# 3. Uninstallation
-## 3.1 Automated method
-Just run:
 
-`curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/revert-changes.sh | sudo bash
-`
+
+# Manual Setup
+
+If you prefer to do the systemwide changes manually, we have a dedicated page [here](Manual-install.md).
