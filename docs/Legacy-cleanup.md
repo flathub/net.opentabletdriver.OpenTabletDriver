@@ -8,7 +8,6 @@ Even if you aren't sure that you have, this is non destructive and cannot damage
 
 Most distros follow the FHS standard, if you don’t know if your distro follows this standard, it most likely does.
 
-
 ## Removing obsolete udev rules
 
 Please run the following script in bash, alternatively you may check the directories listed for the aforementioned files.

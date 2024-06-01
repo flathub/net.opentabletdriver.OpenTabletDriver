@@ -2,6 +2,12 @@
 
 Welcome to the unofficial Flatpak package for OpenTabletDriver! This Flatpak package, `net.opentabletdriver.OpenTabletDriver`, is maintained by an independent developer passionate about making OpenTabletDriver more accessible and easier to install on Linux distributions. While this is not an official package from the OpenTabletDriver project team, it aims to deliver the same great user experience and functionality.
 
+Because OpenTabletDriver requires access to the tablet, it requires systemwide permission changes. If you do not have access to root, you cannot use this package.
+
+Using this package means that you are solely resposible for maintaining and updating the udev rules when you update the driver. This cannot be managed by the flatpak package.
+
+Because of this it is better for most people to use the official packages where possible. You can find the official installation instructions on their [website](https://opentabletdriver.net).
+
 ## About OpenTabletDriver
 
 OpenTabletDriver is an open-source, cross-platform tablet driver offering high compatibility and performance for a wide range of graphics tablets. It features an easily configurable graphical user interface, making it possible for users to fine-tune their tablets to match their exact needs. OpenTabletDriver supports absolute and relative cursor positioning, pen bindings, and even custom plugins for enhanced functionality.
@@ -9,7 +15,8 @@ OpenTabletDriver is an open-source, cross-platform tablet driver offering high c
 ## Installation
 
 ### Prerequisites
-Before installing OpenTabletDriver, you need to set up Flatpak on your system. Follow the [pre-installation guide provided](https://github.com/flathub/net.opentabletdriver.OpenTabletDriver/blob/docs/Pre-installation.md).
+
+For OpenTabletDriver to function correctly, you must install udev rules and blacklist some kernel modules. Follow the [pre-installation guide](docs/Pre-installation.md) for instructions on how to do this. OpenTabletDriver will **not** function without without doing this.
 
 ### Installation
 
@@ -34,3 +41,13 @@ flatpak run net.opentabletdriver.OpenTabletDriver
 ```
 
 This command starts the OpenTabletDriver daemon and, if you choose to use it, the GUI for configuring your tablet settings. Remember, the daemon must be running for tablet functionality, but the GUI is optional and used only for configuration purposes.
+
+# Updating OpenTabletDriver
+
+You can update this package either by calling `flatpak update` to update every package or directly specifying this package.
+
+```bash
+flatpak update net.opentabletdriver.OpenTabletDriver
+```
+
+Once complete, you should follow the [pre-installation guide](docs/Pre-installation.md) again to update the udev rules.
