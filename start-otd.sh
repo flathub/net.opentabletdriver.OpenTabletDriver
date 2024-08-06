@@ -22,16 +22,15 @@ then
   if ! ps ax | grep -v grep | grep "OpenTabletDriver.Daemon" > /dev/null
     then
       echo "OpenTabletDriver.Daemon is not running, starting it now..."
-      # Start Daemon from the current directory
-echo      "/app/bin/OpenTabletDriver.Daemon &"
+      /app/bin/OpenTabletDriver.Daemon &
     else
       echo "OpenTabletDriver.Daemon is already running."
     fi
     # Start OpenTabletDriver.UX.Gtk with exec, replacing the current shell
     echo "Starting OpenTabletDriver.UX.Gtk with exec..."
-echo    exec /app/bin/OpenTabletDriver.UX.Gtk
+    exec /app/bin/OpenTabletDriver.UX.Gtk
 else
     echo "Running only the driver daemon"
     # Start OpenTabletDriver with exec, replacing the current shell
-echo    exec /app/bin/OpenTabletDriver.Daemon
+    exec /app/bin/OpenTabletDriver.Daemon
 fi
