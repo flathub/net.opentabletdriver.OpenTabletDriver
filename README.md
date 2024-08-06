@@ -47,6 +47,16 @@ To only launch the driver, run:
 flatpak run net.opentabletdriver.OpenTabletDriver -d
 ```
 
+### Running as a daemon
+
+If you want to start a driver at login, set up a user-level systemd service using the following steps:
+```bash
+mkdir -p ~/.config/systemd/user/
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/opentabletdriver.service > ~/.config/systemd/user/opentabletdriver.service
+systemctl --user daemon-reload
+systemctl --user restart opentabletdriver.service
+``` 
+
 # Updating OpenTabletDriver
 
 You can update this package either by calling `flatpak update` to update every package or directly specifying this package.
