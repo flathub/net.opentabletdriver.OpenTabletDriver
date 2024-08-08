@@ -40,7 +40,22 @@ After installation, OpenTabletDriver can be launched from your application menu 
 flatpak run net.opentabletdriver.OpenTabletDriver
 ```
 
-This command starts the OpenTabletDriver daemon and, if you choose to use it, the GUI for configuring your tablet settings. Remember, the daemon must be running for tablet functionality, but the GUI is optional and used only for configuration purposes.
+This command starts the OpenTabletDriver daemon and the GUI for configuring your tablet settings. Remember, the daemon must be running for tablet functionality, but the GUI is optional and used only for configuration purposes.
+
+To only launch the driver, run:
+```bash
+flatpak run net.opentabletdriver.OpenTabletDriver -d
+```
+
+### Running as a daemon
+
+If you want to start a driver at login, set up a user-level systemd service using the following steps:
+```bash
+mkdir -p ~/.config/systemd/user/
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/opentabletdriver.service > ~/.config/systemd/user/opentabletdriver.service
+systemctl --user daemon-reload
+systemctl enable --now --user opentabletdriver.service
+``` 
 
 # Updating OpenTabletDriver
 
