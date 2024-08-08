@@ -46,3 +46,11 @@ After running the above commands and rebuilding your initramfs, you can avoid re
 ```bash
 sudo rmmod wacom hid_uclogic
 ```
+
+### Fedora Atomic
+Disabling modules immutable Fedora spins (Silverblue, Kinoite, Universal Blue, Bazzite, Bluefin, Aurora etc)
+) is only possible using `rpm-ostree` command:
+```
+rpm-ostree kargs --append=modprobe.blacklist=hid_uclogic --append=modprobe.blacklist=wacom
+systemctl reboot
+```
