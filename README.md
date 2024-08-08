@@ -54,7 +54,7 @@ If you want to start a driver at login, set up a user-level systemd service usin
 mkdir -p ~/.config/systemd/user/
 curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/opentabletdriver.service > ~/.config/systemd/user/opentabletdriver.service
 systemctl --user daemon-reload
-systemctl --user restart opentabletdriver.service
+systemctl enable --now --user opentabletdriver.service
 ``` 
 
 # Updating OpenTabletDriver
