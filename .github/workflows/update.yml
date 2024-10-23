@@ -69,7 +69,7 @@ jobs:
         run: rm -rf ${{ github.workspace }}/temp ${{ github.workspace }}/*.tar.gz ${{ github.workspace }}/flatpak-dotnet-generator.py
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: OpenTabletDriver-Files
           path: |
