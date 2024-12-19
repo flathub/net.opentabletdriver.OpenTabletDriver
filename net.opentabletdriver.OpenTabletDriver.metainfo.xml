@@ -29,6 +29,7 @@
   </screenshots>
   <releases>
     <release version="v0.6.4.0" date="2023-12-23" type="stable"/>
+    <release version="v0.6.5.0" date="2024-01-18" type="stable"/>
   </releases>
   <url type="homepage">https://github.com/OpenTabletDriver/OpenTabletDriver</url>
   <url type="bugtracker">https://github.com/OpenTabletDriver/OpenTabletDriver/issues</url>
