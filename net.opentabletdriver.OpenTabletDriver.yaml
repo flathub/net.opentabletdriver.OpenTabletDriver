@@ -51,9 +51,9 @@ modules:
       append-ld-library-path: "/usr/lib/sdk/dotnet8/lib"
       prepend-pkg-config-path: "/usr/lib/sdk/dotnet8/lib/pkgconfig"
     build-commands:
-      - dotnet publish OpenTabletDriver.Console/OpenTabletDriver.Console.csproj -c Release -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
-      - dotnet publish OpenTabletDriver.Daemon/OpenTabletDriver.Daemon.csproj -c Release -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
-      - dotnet publish OpenTabletDriver.UX.Gtk/OpenTabletDriver.UX.Gtk.csproj -c Release -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.Console/OpenTabletDriver.Console.csproj -c Release -p:PublishSingleFile=true -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.Daemon/OpenTabletDriver.Daemon.csproj -c Release -p:PublishSingleFile=true -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
+      - dotnet publish OpenTabletDriver.UX.Gtk/OpenTabletDriver.UX.Gtk.csproj -c Release -p:PublishSingleFile=true -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
       - install -Dm644 net.opentabletdriver.OpenTabletDriver.desktop ${FLATPAK_DEST}/share/applications/net.opentabletdriver.OpenTabletDriver.desktop
       - install -Dm644 256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/net.opentabletdriver.OpenTabletDriver.png
       - install -Dm644 net.opentabletdriver.OpenTabletDriver.metainfo.xml ${FLATPAK_DEST}/share/metainfo/net.opentabletdriver.OpenTabletDriver.metainfo.xml
