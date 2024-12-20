@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set library path
+export LD_LIBRARY_PATH=/app/lib64:$LD_LIBRARY_PATH
+
 # Check arguments
 while [[ $# -gt 0 ]]; do
   case $1 in

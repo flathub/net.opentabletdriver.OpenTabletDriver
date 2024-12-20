@@ -7,7 +7,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      FREEDESKTOP_VERSION: "23.08"
+      FREEDESKTOP_VERSION: "24.08"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
         run: |
           flatpak install flathub org.freedesktop.Platform//${{ env.FREEDESKTOP_VERSION }} -y
           flatpak install flathub org.freedesktop.Sdk//${{ env.FREEDESKTOP_VERSION }} -y
-          flatpak install flathub org.freedesktop.Sdk.Extension.dotnet6//${{ env.FREEDESKTOP_VERSION }} -y
+          flatpak install flathub org.freedesktop.Sdk.Extension.dotnet8//${{ env.FREEDESKTOP_VERSION }} -y
 
       - name: Download and extract OpenTabletDriver latest release
         run: |
@@ -40,7 +40,7 @@ jobs:
           tar -xzf OpenTabletDriver-${TAG}.tar.gz -C ${{ github.workspace }}/temp
 
       - name: Download flatpak-dotnet-generator.py script
-        run: wget https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/dotnet/flatpak-dotnet-generator.py
+        run: wget https://raw.githubusercontent.com/first-storm/flatpak-builder-tools/7719d451c3ded70f658385f6471d5deb42952be2/dotnet/flatpak-dotnet-generator.py
 
       - name: Generate JSONs for different architectures and move them
         run: |
