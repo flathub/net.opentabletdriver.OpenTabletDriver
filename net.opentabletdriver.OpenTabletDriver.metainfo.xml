@@ -28,6 +28,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="v0.6.5.1" date="2025-02-02" type="stable"/>
     <release version="v0.6.5.0" date="2024-12-18" type="stable"/>
     <release version="v0.6.4.0" date="2023-12-23" type="stable"/>
   </releases>
