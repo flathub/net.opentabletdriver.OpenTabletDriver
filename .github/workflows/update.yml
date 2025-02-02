@@ -40,14 +40,14 @@ jobs:
           tar -xzf OpenTabletDriver-${TAG}.tar.gz -C ${{ github.workspace }}/temp
 
       - name: Download flatpak-dotnet-generator.py script
-        run: wget https://raw.githubusercontent.com/first-storm/flatpak-builder-tools/7719d451c3ded70f658385f6471d5deb42952be2/dotnet/flatpak-dotnet-generator.py
+        run: wget https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/54c010c703ebe18891288886dd41274e4efe3da7/dotnet/flatpak-dotnet-generator.py
 
       - name: Generate JSONs for different architectures and move them
         run: |
           SUBDIR=$(basename $(find ${{ github.workspace }}/temp -mindepth 1 -maxdepth 1 -type d))
-          CS_PROJ_PATH="${{ github.workspace }}/temp/${SUBDIR}/OpenTabletDriver.UX.Gtk/OpenTabletDriver.UX.Gtk.csproj"
-          python flatpak-dotnet-generator.py linux-x64.json $CS_PROJ_PATH --runtime linux-x64 --freedesktop ${{ env.FREEDESKTOP_VERSION }}
-          python flatpak-dotnet-generator.py linux-arm64.json $CS_PROJ_PATH --runtime linux-arm64 --freedesktop ${{ env.FREEDESKTOP_VERSION }}
+          CS_PROJ_PATH="${{ github.workspace }}/temp/${SUBDIR}/OpenTabletDriver.Linux.slnf"
+          python flatpak-dotnet-generator.py linux-x64.json $CS_PROJ_PATH --runtime linux-x64 --freedesktop ${{ env.FREEDESKTOP_VERSION }} --dotnet-args -p:PublishSingleFile=true
+          python flatpak-dotnet-generator.py linux-arm64.json $CS_PROJ_PATH --runtime linux-arm64 --freedesktop ${{ env.FREEDESKTOP_VERSION }} --dotnet-args -p:PublishSingleFile=true
           mv linux-x64.json ${{ github.workspace }}/sources/linux-x64.json
           mv linux-arm64.json ${{ github.workspace }}/sources/linux-arm64.json
 
