@@ -1,6 +1,6 @@
 app-id: net.opentabletdriver.OpenTabletDriver
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 command: start-otd.sh
 sdk-extensions:
@@ -63,7 +63,7 @@ modules:
       - ./sources/linux-arm64.json
       - type: git
         url: https://github.com/OpenTabletDriver/OpenTabletDriver
-        tag: v0.6.5.0
+        tag: v0.6.5.1
       - type: file
         path: ./net.opentabletdriver.OpenTabletDriver.desktop
       - type: file
