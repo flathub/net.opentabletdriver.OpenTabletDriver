@@ -14,7 +14,7 @@ You are welcome to run these commands individually and inspect anything you like
 
 ```bash
 # Download the latest commit of OpenTabletDriver from the official github.
-git clone https://github.com/OpenTabletDriver/OpenTabletDriver.git --depth=1
+git clone https://github.com/OpenTabletDriver/OpenTabletDriver.git --branch 0.6.x --depth=1
 cd OpenTabletDriver
 # Run the udev generation script and write the output to /etc/udev/rules.d/
 ./generate-rules.sh | sudo tee /etc/udev/rules.d/70-opentabletdriver.rules
