@@ -55,7 +55,7 @@ check_udev_directory() {
             fi
         done
 
-        git clone https://github.com/OpenTabletDriver/OpenTabletDriver.git --depth=1
+        git clone https://github.com/OpenTabletDriver/OpenTabletDriver.git --branch 0.6.x --depth=1
         cd OpenTabletDriver
 
         ./generate-rules.sh | sudo tee /etc/udev/rules.d/70-opentabletdriver.rules
