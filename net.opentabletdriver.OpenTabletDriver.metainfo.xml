@@ -36,7 +36,8 @@
   <url type="homepage">https://github.com/OpenTabletDriver/OpenTabletDriver</url>
   <url type="bugtracker">https://github.com/OpenTabletDriver/OpenTabletDriver/issues</url>
   <url type="faq">https://opentabletdriver.net/Wiki/FAQ/Linux</url>
-  <url type="help">https://opentabletdriver.net/Wiki/Install/Linux</url>
+  <url type="help">https://github.com/flathub/net.opentabletdriver.OpenTabletDriver/blob/master/README.md</url>
+  <url type="contact">https://opentabletdriver.net/Discord</url>
   <categories>
     <category>Settings</category>
   </categories>
