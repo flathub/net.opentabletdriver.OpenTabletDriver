@@ -12,6 +12,7 @@
   <project_group>OpenTabletDriver</project_group>
   <description>
     <p>OpenTabletDriver is an open source, cross platform, user mode tablet driver. The goal of OpenTabletDriver is to be cross platform as possible with the highest compatibility in an easily configurable graphical user interface.</p>
+    <p>**This package requires additional setup after installation.** Please check the help page for instructions.</p>
   </description>
   <screenshots>
     <screenshot type="default">
