@@ -28,9 +28,9 @@ These scripts assume that you have not used a legacy package of OpenTabletDriver
 
 ```sh
 # Install udev rules, this is required for OTD to function.
-curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-udev.sh | bash
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/refs/heads/master/scripts/setup-udev.sh | bash
 # This is optional, but not blacklisting modules means you'll have to `rmmod` every time to use OpenTabletDriver.
-curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/scripts/setup-module.sh | bash 
+curl -s https://raw.githubusercontent.com/flathub/net.opentabletdriver.OpenTabletDriver/refs/heads/master/scripts/setup-module.sh | bash 
 ```
 
 
