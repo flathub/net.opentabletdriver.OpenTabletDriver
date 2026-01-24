@@ -12,15 +12,6 @@ finish-args:
   - --share=network
   - --device=all
 modules:
-  - name: libnotify
-    buildsystem: meson
-    config-opts:
-      - -Dman=false
-      - -Dgtk_doc=false
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libnotify.git
-        tag: 0.8.3
 
   - name: libevdev
     buildsystem: meson
