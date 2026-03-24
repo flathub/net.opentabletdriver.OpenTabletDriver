@@ -134,10 +134,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/8.0.20/microsoft.aspnetcore.app.runtime.linux-x64.8.0.20.nupkg",
-        "sha512": "a4ad7130b9dd65fd274df33ca98a09f9698e2af4aba6f578aaa7a2341830fbf77e9b36e8094f39278bcbb44cc6b985d62094ca0c9bb133b1aa254fac700ade4c",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/8.0.24/microsoft.aspnetcore.app.runtime.linux-x64.8.0.24.nupkg",
+        "sha512": "f7805bda78f43acc114b705d198f7995a35b806b37ae746b509218c6b69f99015653382b4139bd5812edc1a1db832c97ccb76ad09e47fdc75f0066c0520c90af",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.aspnetcore.app.runtime.linux-x64.8.0.20.nupkg"
+        "dest-filename": "microsoft.aspnetcore.app.runtime.linux-x64.8.0.24.nupkg"
     },
     {
         "type": "file",
@@ -225,10 +225,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.net.illink.tasks/8.0.20/microsoft.net.illink.tasks.8.0.20.nupkg",
-        "sha512": "e08cf541becc2326c028042606f865115a59056cfccdad163d7e82393baf70ad599c9f18b80dc9bf33cec1decd8baef6f5d12ec44753542dd8cece79b6f32a12",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.net.illink.tasks/8.0.24/microsoft.net.illink.tasks.8.0.24.nupkg",
+        "sha512": "e5d8213656a1b53bafc6c2bed19107bae7e3138a7f3ab5441db1a468d2d9ecc5bc1bb02780c3d66465971ac0b7060decdb3b067618fa564cd01d9f2e4b84bac8",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.net.illink.tasks.8.0.20.nupkg"
+        "dest-filename": "microsoft.net.illink.tasks.8.0.24.nupkg"
     },
     {
         "type": "file",
@@ -239,10 +239,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/8.0.20/microsoft.netcore.app.runtime.linux-x64.8.0.20.nupkg",
-        "sha512": "cb56cc704d8d13add1a3b473a024a48eb416d930f029bc191eaad846349884ef04d2eab8b987864ae12313da363a8ab4e3dc4d758b1d4df485da2a6a1666f9d0",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/8.0.24/microsoft.netcore.app.runtime.linux-x64.8.0.24.nupkg",
+        "sha512": "492cebdafdfecc76cefe8bbdde9ed3d3369a5868160d4fe4c00fa86cc62b6ab773d0c75422cbcaba653dfe732ba7c950208a69bb0fc7bbf04a9e94a3814017db",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.netcore.app.runtime.linux-x64.8.0.20.nupkg"
+        "dest-filename": "microsoft.netcore.app.runtime.linux-x64.8.0.24.nupkg"
     },
     {
         "type": "file",
