@@ -12,7 +12,6 @@ finish-args:
   - --share=network
   - --device=all
 modules:
-
   - name: libevdev
     buildsystem: meson
     config-opts:
