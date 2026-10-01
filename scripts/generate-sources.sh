@@ -19,7 +19,7 @@ Generate:
 Options:
   --tag <tag>       Override the OpenTabletDriver tag from the manifest
   --latest          Use the latest GitHub release tag
-  --runtime <ver>   Override manifest runtime-version, e.g. 25.08
+  --runtime <ver>   Override manifest runtime-version, e.g. 26.08
   --keep-temp       Keep the temporary working directory
   -h, --help        Show this help text
 EOF
