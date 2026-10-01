@@ -1,6 +1,6 @@
 app-id: net.opentabletdriver.OpenTabletDriver
 runtime: org.freedesktop.Platform
-runtime-version: "25.08"
+runtime-version: "26.08"
 sdk: org.freedesktop.Sdk
 command: start-otd.sh
 sdk-extensions:
@@ -25,8 +25,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/libevdev/libevdev.git
-        tag: libevdev-1.13.6
-        commit: 139b58e135184f66a35c2401771f3d8134f097ad
+        tag: libevdev-1.13.7
+        commit: a158f468affb059669189454a52b0d78c563618b
 
   - name: opentabletdriver
     buildsystem: simple
