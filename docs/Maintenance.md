@@ -24,10 +24,10 @@ Refer to [`.github/workflows/update.yml`](../.github/workflows/update.yml) for t
 
 1. Fetch the latest release tag from the OpenTabletDriver repo
 2. Regenerate `sources/linux-x64.json` and `sources/linux-arm64.json`
-3. Update the `tag:` field in the manifest
+3. Update the `tag:` and pinned `commit:` fields in the manifest
 4. Open a PR to `master`
 
-To update manually, change the `tag:` under the `opentabletdriver` git source in `net.opentabletdriver.OpenTabletDriver.yaml`, then run `./scripts/generate-sources.sh`.
+To update manually, change the `tag:` and matching `commit:` under the `opentabletdriver` git source in `net.opentabletdriver.OpenTabletDriver.yaml`, then run `./scripts/generate-sources.sh`.
 
 > **Note:** The workflow's `FREEDESKTOP_VERSION` env var must match the manifest's `runtime-version`. Update it if you bump the runtime.
 
