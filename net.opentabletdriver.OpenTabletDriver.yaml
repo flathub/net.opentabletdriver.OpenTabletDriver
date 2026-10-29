@@ -4,7 +4,7 @@ runtime-version: "26.08"
 sdk: org.freedesktop.Sdk
 command: start-otd.sh
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.dotnet8
+  - org.freedesktop.Sdk.Extension.dotnet10
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -38,9 +38,9 @@ modules:
         x86_64:
           env:
             RUNTIME: "linux-x64"
-      append-path: "/usr/lib/sdk/dotnet8/bin"
-      append-ld-library-path: "/usr/lib/sdk/dotnet8/lib"
-      prepend-pkg-config-path: "/usr/lib/sdk/dotnet8/lib/pkgconfig"
+      append-path: "/usr/lib/sdk/dotnet10/bin"
+      append-ld-library-path: "/usr/lib/sdk/dotnet10/lib"
+      prepend-pkg-config-path: "/usr/lib/sdk/dotnet10/lib/pkgconfig"
     build-commands:
       - dotnet publish OpenTabletDriver.Console/OpenTabletDriver.Console.csproj -c Release -p:PublishSingleFile=true -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
       - dotnet publish OpenTabletDriver.Daemon/OpenTabletDriver.Daemon.csproj -c Release -p:PublishSingleFile=true -r $RUNTIME --source nuget-sources -p:DebugType=None --self-contained true -o ${FLATPAK_DEST}/bin
@@ -54,8 +54,8 @@ modules:
       - ./sources/linux-arm64.json
       - type: git
         url: https://github.com/OpenTabletDriver/OpenTabletDriver
-        tag: v0.6.7
-        commit: 736003ed72c8bbb28033b039d5a0bb76c344145c
+        tag: v0.6.8.1
+        commit: f3927ac11146cb7dd5c3b43277d5d1e33e36f6d6
       - type: file
         path: ./net.opentabletdriver.OpenTabletDriver.desktop
       - type: file
