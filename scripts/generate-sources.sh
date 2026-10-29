@@ -113,7 +113,7 @@ generate_json() {
     --runtime="org.freedesktop.Sdk//$freedesktop_version" \
     --share=network \
     --filesystem="$workdir" \
-    "org.freedesktop.Sdk.Extension.dotnet8//$freedesktop_version" \
+    "org.freedesktop.Sdk.Extension.dotnet10//$freedesktop_version" \
     -c '
       set -euo pipefail
       work=/tmp/otdsrc
@@ -121,8 +121,8 @@ generate_json() {
       mkdir -p "$work"
       tar -xzf "$1/archive.tar.gz" -C "$work"
       cd "$work"/OpenTabletDriver-*
-      export PATH="$PATH:/usr/lib/sdk/dotnet8/bin"
-      export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/sdk/dotnet8/lib"
+      export PATH="$PATH:/usr/lib/sdk/dotnet10/bin"
+      export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/sdk/dotnet10/lib"
       exec dotnet restore --packages "$1/packages-$2" OpenTabletDriver.Linux.slnf -r "$2" -p:PublishSingleFile=true
     ' \
     sh "$workdir" "$runtime_arch"
@@ -200,7 +200,7 @@ fi
 
 check_flatpak_ref "org.freedesktop.Platform//$freedesktop_version"
 check_flatpak_ref "org.freedesktop.Sdk//$freedesktop_version"
-check_flatpak_ref "org.freedesktop.Sdk.Extension.dotnet8//$freedesktop_version"
+check_flatpak_ref "org.freedesktop.Sdk.Extension.dotnet10//$freedesktop_version"
 
 mkdir -p "$repo_root/build-dir"
 workdir="$repo_root/build-dir/otd-sources-gen"
