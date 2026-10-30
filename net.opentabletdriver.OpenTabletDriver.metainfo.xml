@@ -46,11 +46,17 @@
   <categories>
     <category>Settings</category>
   </categories>
+  <requires>
+    <control>tablet</control>
+    <display_length compare="ge">768</display_length>
+  </requires>
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
-    <control>tablet</control>
   </recommends>
+  <supports>
+    <control>touch</control>
+  </supports>
   <content_rating type="oars-1.1"/>
   <launchable type="desktop-id">net.opentabletdriver.OpenTabletDriver.desktop</launchable>
 </component>
